@@ -49,11 +49,14 @@
 (load-theme 'whiteboard)
 
 ;; ido - because it is awesome
-(ido-mode)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
 
 ;; don't want toolbar
 (toggle-tool-bar-mode-from-frame)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 ;; I want to use these functions; Don't disable them
 (put 'downcase-region 'disabled nil)
@@ -79,7 +82,43 @@
 
 ;; use aspell, because I write British English and ispell doesn't like that
 (setq ispell-program-name "aspell")
+(setq ispell-dictionary "british")
 
 ;; Key bindings - what it says on the label.
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-M-e") 'eval-buffer)
+
+;; don't pollute cwd tree with temp files.
+(setq
+   backup-by-copying t      ; don't clobber symlinks
+   backup-directory-alist
+    '(("." . "~/.saves"))    ; don't litter my fs tree
+   delete-old-versions t
+   kept-new-versions 6
+   kept-old-versions 2
+   version-control t)       ; use versioned backups
+
+;; y-or-n
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; word count
+(require 'wc-mode)
+
+;; highlight style issue
+(require 'writegood-mode)
+
+;;synonyms
+(setq synonyms-file        "/Users/sdqali/mthes10/mthesaur.txt")
+(setq synonyms-cache-file  "/Users/sdqali/mthes10/mthesaur-cache.txt")
+(require 'synonyms)
+
+;; colors
+(require 'color-theme)
+(color-theme-gray30)
+
+;; writer mode
+
+(define-minor-mode writer-mode
+  (writegood-mode)
+  (flyspell-mode)
+  (wc-mode))
