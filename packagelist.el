@@ -9,3 +9,5 @@
 (package-install 'zen-mode)
 (package-install 'color-theme)
 (package-install 'synonyms)
+(package-install 'smartparens)
+(package-install 'markdown-mode)

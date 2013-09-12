@@ -122,3 +122,6 @@
   (writegood-mode)
   (flyspell-mode)
   (wc-mode))
+
+(require 'smartparens)
+(require 'markdown-mode)
