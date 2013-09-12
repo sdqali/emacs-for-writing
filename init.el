@@ -108,8 +108,8 @@
 (require 'writegood-mode)
 
 ;;synonyms
-(setq synonyms-file        "/Users/sdqali/mthes10/mthesaur.txt")
-(setq synonyms-cache-file  "/Users/sdqali/mthes10/mthesaur-cache.txt")
+(setq synonyms-file        "/Users/sdqali/.mthes10/mthesaur.txt")
+(setq synonyms-cache-file  "/Users/sdqali/.mthes10/mthesaur-cache.txt")
 (require 'synonyms)
 
 ;; colors
