@@ -11,3 +11,7 @@
 (package-install 'synonyms)
 (package-install 'smartparens)
 (package-install 'markdown-mode)
+(package-install 'octomacs)
+(package-install 'rbenv)
+(package-install 'typopunct)
+(package-install 'color-theme-solarized)

@@ -45,9 +45,6 @@
 ;; I don't want a menu bar
 (menu-bar-mode -1)
 
-;; white theme for writing
-(load-theme 'whiteboard)
-
 ;; ido - because it is awesome
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
@@ -112,10 +109,6 @@
 (setq synonyms-cache-file  "/Users/sdqali/.mthes10/mthesaur-cache.txt")
 (require 'synonyms)
 
-;; colors
-(require 'color-theme)
-(color-theme-gray30)
-
 ;; writer mode
 
 (define-minor-mode writer-mode
@@ -125,3 +118,23 @@
 
 (require 'smartparens)
 (require 'markdown-mode)
+(require 'octomacs)
+(require 'rbenv)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(octomacs-workdir-alist (quote (("sdqali" . "/Users/sdqali/src/sdqali.github.com")))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(require 'color-theme-solarized)
+(load-theme 'solarized-dark t)
+
+(require 'typopunct)
